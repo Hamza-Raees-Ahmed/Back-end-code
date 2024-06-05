@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 import dotenv from "dotenv";
 
-const URI= 'mongodb+srv://hamzaqazi2508:bW6atnCQIlwgsK5G@cluster0.h1tegnl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const URI= process.env.MONGODB_URI  || ""
 const connectdb = async ()=>{
    try {
      const conn = await mongoose.connect(URI)
